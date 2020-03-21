@@ -7,8 +7,6 @@ class Solution {
    * @return Integer
    */
   function reverse($x) {
-  	$INT_MAX = (1<<31)-1;
-  	$INT_MIN = -1<<31;
   	
   	$sign = 1;
   	if($x < 0) {
@@ -23,10 +21,8 @@ class Solution {
   		$y += $x % 10;
   		$x = (int)($x / 10);
   	}
-  	$y *= $sign;
-  	if($y > (int)$INT_MAX or $y < (int)$INT_MIN)
-    	return 0;
-		return $y;
+  	if($y > 0x7FFFFFFF) return 0;
+		return $y *= $sign;
   }
 }
 
