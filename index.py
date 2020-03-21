@@ -18,9 +18,10 @@ class Solution(object):
         	x = x / 10
         y *= 10
         y += x % 10
+        y*sign
         if y > INT_MAX or y < INT_MIN:
         	return 0
-        return y*sign
+        return y
 #        z = []
 #        sign = 1
 #        if x < 0:
