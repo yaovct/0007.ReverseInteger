@@ -7,7 +7,6 @@ class Solution {
    * @return Integer
    */
   function reverse($x) {
-  	
   	$sign = 1;
   	if($x < 0) {
   		$sign = -1;
@@ -21,6 +20,7 @@ class Solution {
   		$y += $x % 10;
   		$x = (int)($x / 10);
   	}
+  	# if($y > pow(2, 31)-1 or $y < pow(2, 31) * -1) return 0;
   	if($y > 0x7FFFFFFF) return 0;
 		return $y *= $sign;
   }
