@@ -4,8 +4,8 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        INT_MAX = (1<<31)-1
-        INT_MIN = -1<<31
+        #INT_MAX = (1<<31)-1
+        #INT_MIN = -1<<31
         sign = 1
         if x < 0:
         	sign = -1
@@ -18,10 +18,10 @@ class Solution(object):
         	x = x / 10
         y *= 10
         y += x % 10
-        y *= sign
-        if y > INT_MAX or y < INT_MIN:
+        #if y > INT_MAX or y < INT_MIN:
+        if y > 0x7FFFFFFF:
         	return 0
-        return y
+        return y*sign
 #        z = []
 #        sign = 1
 #        if x < 0:
