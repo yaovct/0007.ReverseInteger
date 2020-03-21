@@ -4,6 +4,8 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
+        INT_MAX = (1<<31)-1
+        INT_MIN = -1<<31
         sign = 1
         if x < 0:
         	sign = -1
@@ -16,7 +18,7 @@ class Solution(object):
         	x = x / 10
         y *= 10
         y += x % 10
-        if y > pow(2, 31) - 1 or y < pow(2, 31) * -1:
+        if y > INT_MAX or y < INT_MIN:
         	return 0
         return y*sign
 #        z = []
@@ -31,7 +33,7 @@ class Solution(object):
 #        return t
 
 my_test = Solution()
-sample = [123, -123, 120, 1534236469]
+sample = [123, -123, 120, 1534236469, -2147483412]
 
 for m in sample:
   print("%d => %d" % (m, my_test.reverse(m)))
