@@ -16,12 +16,12 @@ var reverse = function(x) {
 		y += parseInt(x % 10);
 		x /= 10;
 	}
-  if(y > Math.pow(2, 31) - 1 || y < Math.pow(2, 31) * -1)
-  	return 0;
+  //if(y > Math.pow(2, 31) - 1 || y < Math.pow(2, 31) * -1)
+  if(y > 0x7FFFFFFF) return 0;
 	return y*sign;
 };
 
-var sample = [123, -123, 120, 1534236469, 0];
+var sample = [123, -123, 120, 1534236469, 0, -2147483412];
 sample.forEach(function (m) {
 	console.log(m, reverse(m));
 });
