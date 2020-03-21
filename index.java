@@ -14,20 +14,20 @@ class Solution {
   		y += x % 10;
   		x /= 10;
   	}
-  	if(y > Math.pow(2, 31) - 1 || y < Math.pow(2, 31) * -1) return 0;
-  	int z = (int)y;
-  	return z*sign;
+  	//if(y > Math.pow(2, 31) - 1 || y < Math.pow(2, 31) * -1) return 0;
+  	if(y > 0x7FFFFFFF) return 0;
+  	return (int)y*sign;
   }
 }
 
 public class index {
 
 	public static void main(String[] args) {
-		int[] sample = {123, -123, 120, 1534236469, 0};
+		int[] sample = {123, -123, 120, 1534236469, 0, -2147483412};
 
     Solution demo = new Solution();
     for(int m : sample) {
-    	System.out.printf("%d = %d\n", m, demo.reverse(m));
+    	System.out.printf("%d => %d\n", m, demo.reverse(m));
     }
 	}
 }
