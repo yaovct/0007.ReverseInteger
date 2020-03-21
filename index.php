@@ -22,7 +22,7 @@ class Solution {
   	}
   	# if($y > pow(2, 31)-1 or $y < pow(2, 31) * -1) return 0;
   	if($y > 0x7FFFFFFF) return 0;
-		return $y *= $sign;
+		return $y*$sign;
   }
 }
 
